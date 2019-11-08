@@ -16,6 +16,7 @@ import com.easyway.review.adapter.OnItemClickListener;
 import com.easyway.review.adapter.RecycleViewAdapter;
 import com.easyway.review.adapter.RecyclerItemClickListener;
 import com.easyway.review.base.BaseActivity;
+import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.hanks.frame.utils.UToast;
 import com.hanks.frame.utils.Uintent;
 
@@ -33,6 +34,7 @@ public class MainActivity extends BaseActivity {
 
         mList = initData();
         mList.add("RecycleView");
+        mList.add("NDK");
 
         initToolbar();
 
@@ -42,6 +44,9 @@ public class MainActivity extends BaseActivity {
             public void onItemClick(View view, int position) {
                 switch (mList.get(position)) {
                     case "RecycleView":
+                        Uintent.intentDIY(mActivity, RecycleViewActivity.class);
+                        break;
+                    case "NDK":
                         Uintent.intentDIY(mActivity, NDKActivity.class);
                         break;
                 }
@@ -55,6 +60,12 @@ public class MainActivity extends BaseActivity {
         }));
 
 
+    }
+
+    @Override
+    protected void setOnTranslucent() {
+        //注释之后就没有状态栏沉浸了
+//        super.setOnTranslucent();
     }
 
     private void initRecycleView(List<String> list) {
