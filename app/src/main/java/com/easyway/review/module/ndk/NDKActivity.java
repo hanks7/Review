@@ -1,8 +1,10 @@
-package com.easyway.review;
+package com.easyway.review.module.ndk;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.easyway.review.R;
 
 public class NDKActivity extends AppCompatActivity {
 

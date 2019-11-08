@@ -2,7 +2,6 @@ package com.easyway.review.module.recycleview;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,12 +60,5 @@ public class MeiziDetialActivity extends BaseActivity {
         actionBar.setTitle(title);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }

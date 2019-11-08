@@ -16,6 +16,7 @@ import com.easyway.review.adapter.OnItemClickListener;
 import com.easyway.review.adapter.RecycleViewAdapter;
 import com.easyway.review.adapter.RecyclerItemClickListener;
 import com.easyway.review.base.BaseActivity;
+import com.easyway.review.module.ndk.NDKActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.hanks.frame.utils.UToast;
 import com.hanks.frame.utils.Uintent;
@@ -50,7 +51,6 @@ public class MainActivity extends BaseActivity {
                         Uintent.intentDIY(mActivity, NDKActivity.class);
                         break;
                 }
-                UToast.showText(position);
             }
 
             @Override
