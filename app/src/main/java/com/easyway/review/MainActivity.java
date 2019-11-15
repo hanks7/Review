@@ -16,6 +16,7 @@ import com.easyway.review.adapter.OnItemClickListener;
 import com.easyway.review.adapter.RecycleViewAdapter;
 import com.easyway.review.adapter.RecyclerItemClickListener;
 import com.easyway.review.base.BaseActivity;
+import com.easyway.review.module.VibrationVoiceActivity;
 import com.easyway.review.module.ndk.NDKActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.hanks.frame.utils.UToast;
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity {
         mList = initData();
         mList.add("RecycleView");
         mList.add("NDK");
+        mList.add("震动和声音");
 
         initToolbar();
 
@@ -49,6 +51,9 @@ public class MainActivity extends BaseActivity {
                         break;
                     case "NDK":
                         Uintent.intentDIY(mActivity, NDKActivity.class);
+                        break;
+                    case "震动和声音":
+                        Uintent.intentDIY(mActivity, VibrationVoiceActivity.class);
                         break;
                 }
             }

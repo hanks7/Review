@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.easyway.review">
-
+    //链接网络的权限
     <uses-permission android:name="android.permission.INTERNET" />
+    //震动权限
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name="com.hanks.frame.base.HjjApplication"
         android:allowBackup="true"
@@ -11,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -25,6 +27,7 @@
         <activity android:name=".module.ndk.NDKActivity" />
         <activity android:name=".module.recycleview.RecycleViewActivity" />
         <activity android:name=".module.recycleview.MeiziDetialActivity" />
+        <activity android:name=".module.VibrationVoiceActivity"/>
     </application>
 
 </manifest>

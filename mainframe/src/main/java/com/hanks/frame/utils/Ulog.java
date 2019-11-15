@@ -17,9 +17,9 @@ public class Ulog {
         Log.i(TAG, content + "");
     }
 
-    public static void i(Object... content) {
+    public static void i(Object tag,Object... content) {
         for (Object o : content) {
-            Log.i(TAG, o + "");
+            Log.i(TAG + tag, o + "");
         }
     }
 

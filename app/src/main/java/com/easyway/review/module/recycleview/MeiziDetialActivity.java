@@ -41,7 +41,7 @@ public class MeiziDetialActivity extends BaseActivity {
         String name = getIntent().getStringExtra(NAME);
         int favorites = getIntent().getIntExtra(FAVORITES, 0);
         int comments = getIntent().getIntExtra(COMMENTS, 0);
-        Ulog.i(imageUrl, title, name, favorites, comments);
+        Ulog.i("getIntent",imageUrl, title, name, favorites, comments);
         setMeizi(imageUrl, title, name, favorites, comments);
     }
 
