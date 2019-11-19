@@ -11,6 +11,8 @@ import android.os.Vibrator;
  * @author 侯建军 QQ:474664736
  * @time 2019/11/15 16:06
  * @class 实现短音频和震动工具类
+ * 在使用之前在AndroidManifest.xml文件中添加
+ * <uses-permission android:name="android.permission.VIBRATE"/>
  */
 public class SoundPoolUtils {
     private static final int MAX_STREAMS = 2;

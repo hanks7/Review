@@ -27,7 +27,8 @@
         <activity android:name=".module.ndk.NDKActivity" />
         <activity android:name=".module.recycleview.RecycleViewActivity" />
         <activity android:name=".module.recycleview.MeiziDetialActivity" />
-        <activity android:name=".module.VibrationVoiceActivity"/>
+        <activity android:name=".module.VibrationVoiceActivity" />
+        <activity android:name=".module.dispatchTouchEvent.DispatchActivity"></activity>
     </application>
 
 </manifest>
