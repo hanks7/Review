@@ -28,7 +28,14 @@
         <activity android:name=".module.recycleview.RecycleViewActivity" />
         <activity android:name=".module.recycleview.MeiziDetialActivity" />
         <activity android:name=".module.VibrationVoiceActivity" />
-        <activity android:name=".module.dispatchTouchEvent.DispatchActivity"></activity>
+        <activity android:name=".module.dispatchTouchEvent.DispatchActivity" />
+
+        <service
+            android:name=".module.service.TestService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".module.service.ServiceActivity"></activity>
     </application>
 
 </manifest>
