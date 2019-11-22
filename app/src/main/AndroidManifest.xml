@@ -31,11 +31,11 @@
         <activity android:name=".module.dispatchTouchEvent.DispatchActivity" />
 
         <service
-            android:name=".module.service.TestService"
+            android:name=".module.service.AidlService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".module.service.ServiceActivity"/>
+        <activity android:name=".module.service.AidlActivity"/>
     </application>
 
 </manifest>

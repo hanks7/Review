@@ -2,12 +2,12 @@ package com.easyway.review.module.service;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.IBinder;
 
+import com.easyway.review.IMyAidlInterface;
 import com.hanks.frame.utils.Ulog;
 
-public class TestService extends Service {
+public class AidlService extends Service {
 
     @Override
     public void onCreate() {
@@ -39,9 +39,16 @@ public class TestService extends Service {
         return new Mybind();
     }
 
-    class Mybind extends Binder {
-        public void getString() {
-            Ulog.i("ServiceTest", "  ----->  getString");
+
+    class Mybind extends IMyAidlInterface.Stub {
+
+
+        @Override
+        public String getString() {
+            String string = "我是从服务起返回的";
+
+            return string;
         }
+
     }
 }
