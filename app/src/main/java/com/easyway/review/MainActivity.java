@@ -20,6 +20,7 @@ import com.easyway.review.module.VibrationVoiceActivity;
 import com.easyway.review.module.ndk.NDKActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.easyway.review.module.service.AidlActivity;
+import com.easyway.review.module.view.CustomerViewActivity;
 import com.hanks.frame.utils.UToast;
 import com.hanks.frame.utils.Uintent;
 
@@ -40,6 +41,7 @@ public class MainActivity extends BaseActivity {
         mList.add("NDK");
         mList.add("震动和声音");
         mList.add("AidlService");
+        mList.add("自定义View");
 
         initToolbar();
 
@@ -59,6 +61,9 @@ public class MainActivity extends BaseActivity {
                         break;
                     case "AidlService":
                         Uintent.intentDIY(mActivity, AidlActivity.class);
+                        break;
+                    case "自定义View":
+                        Uintent.intentDIY(mActivity, CustomerViewActivity.class);
                         break;
                 }
             }

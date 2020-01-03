@@ -41,7 +41,9 @@
         <service
             android:name=".module.service.BindService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".module.view.CustomerViewActivity"></activity>
     </application>
 
 </manifest>
