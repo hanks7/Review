@@ -18,6 +18,8 @@ import com.easyway.review.adapter.RecyclerItemClickListener;
 import com.easyway.review.base.BaseActivity;
 import com.easyway.review.module.VibrationVoiceActivity;
 import com.easyway.review.module.ndk.NDKActivity;
+import com.easyway.review.module.patter.mvc.normal.MvcActivity;
+import com.easyway.review.module.patter.mvc.normal.NormalActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.easyway.review.module.service.AidlActivity;
 import com.easyway.review.module.view.CustomerViewActivity;
@@ -42,6 +44,8 @@ public class MainActivity extends BaseActivity {
         mList.add("震动和声音");
         mList.add("AidlService");
         mList.add("自定义View");
+        mList.add("不使用设计模式");
+        mList.add("mvc设计模式");
 
         initToolbar();
 
@@ -64,6 +68,12 @@ public class MainActivity extends BaseActivity {
                         break;
                     case "自定义View":
                         Uintent.intentDIY(mActivity, CustomerViewActivity.class);
+                        break;
+                    case "不使用设计模式":
+                        Uintent.intentDIY(mActivity, NormalActivity.class);
+                        break;
+                    case "mvc设计模式":
+                        Uintent.intentDIY(mActivity, MvcActivity.class);
                         break;
                 }
             }

@@ -43,7 +43,10 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".module.view.CustomerViewActivity"></activity>
+        <activity android:name=".module.view.CustomerViewActivity" />
+        <activity android:name=".module.patter.mvc.normal.NormalActivity" />
+        <activity android:name=".module.patter.mvc.normal.MvcActivity" />
+        <activity android:name=".module.patter.mvp.MVPActivity"></activity>
     </application>
 
 </manifest>
