@@ -46,7 +46,8 @@
         <activity android:name=".module.view.CustomerViewActivity" />
         <activity android:name=".module.patter.mvc.normal.NormalActivity" />
         <activity android:name=".module.patter.mvc.normal.MvcActivity" />
-        <activity android:name=".module.patter.mvp.MVPActivity"></activity>
+        <activity android:name=".module.patter.mvp.MVPActivity" />
+        <activity android:name=".module.patter.mvvm.MVVMActivity"></activity>
     </application>
 
 </manifest>

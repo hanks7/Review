@@ -20,6 +20,8 @@ import com.easyway.review.module.VibrationVoiceActivity;
 import com.easyway.review.module.ndk.NDKActivity;
 import com.easyway.review.module.patter.mvc.normal.MvcActivity;
 import com.easyway.review.module.patter.mvc.normal.NormalActivity;
+import com.easyway.review.module.patter.mvp.MVPActivity;
+import com.easyway.review.module.patter.mvvm.MVVMActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.easyway.review.module.service.AidlActivity;
 import com.easyway.review.module.view.CustomerViewActivity;
@@ -45,7 +47,9 @@ public class MainActivity extends BaseActivity {
         mList.add("AidlService");
         mList.add("自定义View");
         mList.add("不使用设计模式");
-        mList.add("mvc设计模式");
+        mList.add("MVC设计模式");
+        mList.add("MVP设计模式");
+        mList.add("MVVM设计模式");
 
         initToolbar();
 
@@ -72,8 +76,14 @@ public class MainActivity extends BaseActivity {
                     case "不使用设计模式":
                         Uintent.intentDIY(mActivity, NormalActivity.class);
                         break;
-                    case "mvc设计模式":
+                    case "MVC设计模式":
                         Uintent.intentDIY(mActivity, MvcActivity.class);
+                        break;
+                    case "MVP设计模式":
+                        Uintent.intentDIY(mActivity, MVPActivity.class);
+                        break;
+                    case "MVVM设计模式":
+                        Uintent.intentDIY(mActivity, MVVMActivity.class);
                         break;
                 }
             }

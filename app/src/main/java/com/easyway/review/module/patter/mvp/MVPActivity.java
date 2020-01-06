@@ -31,6 +31,7 @@ public class MVPActivity extends AppCompatActivity implements IView {
     TextView tvInfo;
 
     MVPPresenter mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
