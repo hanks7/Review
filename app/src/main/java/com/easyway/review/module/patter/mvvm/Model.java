@@ -10,7 +10,7 @@ import java.util.Random;
  * @time 2020/1/6 13:13
  * @class describe
  */
-public class MVVMModel {
+public class Model {
 
 
     public void getAccountdata(String strAccount, MCallBack back) {

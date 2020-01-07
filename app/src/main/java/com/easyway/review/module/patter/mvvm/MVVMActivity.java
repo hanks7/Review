@@ -21,7 +21,7 @@ public class MVVMActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm);
-        MVVMViewModel viewModel = new MVVMViewModel(getApplication(),binding);
+        ViewModel viewModel = new ViewModel(binding);
         binding.setViewModel(viewModel);
 
     }

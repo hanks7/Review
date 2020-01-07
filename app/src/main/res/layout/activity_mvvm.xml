@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.easyway.review.module.patter.mvvm.MVVMViewModel" />
+            type="com.easyway.review.module.patter.mvvm.ViewModel" />
 
     </data>
 
@@ -18,14 +18,14 @@
         android:orientation="vertical"
         android:padding="12dp"
         tools:context=".module.patter.mvvm.MVVMActivity">
-
+        <!--@={viewModel.userInput}多了一个等号其实是双向绑定-->
         <EditText
             android:id="@+id/edt_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:selectAllOnFocus="true"
-            android:text="Name" />
+            android:text="@={viewModel.userInput}" />
 
         <Button
             android:id="@+id/btn_commit"

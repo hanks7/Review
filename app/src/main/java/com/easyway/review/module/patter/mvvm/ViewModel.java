@@ -1,6 +1,5 @@
 package com.easyway.review.module.patter.mvvm;
 
-import android.app.Application;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
@@ -11,15 +10,31 @@ import com.easyway.review.module.patter.mvc.callback.MCallBack;
 import com.easyway.review.module.patter.mvc.model.Account;
 
 /**
- * @Package: com.easyway.review.module.patter.mvvm.MVVMViewModel
+ * @Package: com.easyway.review.module.patter.mvvm.ViewModel
  * @Author: 侯建军
  * @CreateDate: 2020/1/7 15:54
  * @Description: 请填写描述
  */
-public class MVVMViewModel extends BaseObservable {
-    private String result;
-    private MVVMModel mvvmModel;
+public class ViewModel extends BaseObservable {
+
+
+    private Model model;
     private ActivityMvvmBinding binding;
+
+
+    private String userInput;
+
+    @Bindable
+    public String getUserInput() {
+        return userInput;
+    }
+
+    public void setUserInput(String userInput) {
+        this.userInput = userInput;
+        notifyPropertyChanged(BR.userInput);
+    }
+
+    private String result;
 
     @Bindable
     public String getResult() {
@@ -31,17 +46,17 @@ public class MVVMViewModel extends BaseObservable {
         notifyPropertyChanged(BR.result);
     }
 
-    public MVVMViewModel(Application application) {
-        mvvmModel = new MVVMModel();
+    public ViewModel() {
+        model = new Model();
     }
 
-    public MVVMViewModel(Application application, ActivityMvvmBinding binding) {
-        mvvmModel = new MVVMModel();
+    public ViewModel(ActivityMvvmBinding binding) {
+        model = new Model();
         this.binding = binding;
     }
 
     public void getData(View view) {
-        mvvmModel.getAccountdata(binding.edtInput.getText().toString(), new MCallBack() {
+        model.getAccountdata(userInput, new MCallBack() {
             @Override
             public void onSuccess(Account bean) {
                 String info = bean.getName() + " | " + bean.getLevel();
