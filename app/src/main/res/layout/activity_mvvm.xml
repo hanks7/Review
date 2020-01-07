@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <!--如果你使用了mvvm设计模式， dataBinding  根布局必须使用layout 加<data></data>标签 -->
-    <!--以上操作都可以在假设的根布局 按住Alt+enter 实现-->
-    <data>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.patter.mvvm.MVVMActivity">
 
-        <variable
-            name="account"
-            type="com.easyway.review.module.patter.mvc.model.Account" />
-    </data>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="12dp"
-        tools:context=".module.patter.mvvm.MVVMActivity">
-
-
-        <include layout="@layout/include_test_mvvm" />
-
-        <Button
-            android:id="@+id/btn_addLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="33dp"
-            android:onClick="commit"
-            android:text="增加等级" />
-    </LinearLayout>
-</layout>
+</android.support.constraint.ConstraintLayout>

@@ -21,7 +21,7 @@ import com.easyway.review.module.ndk.NDKActivity;
 import com.easyway.review.module.patter.mvc.normal.MvcActivity;
 import com.easyway.review.module.patter.mvc.normal.NormalActivity;
 import com.easyway.review.module.patter.mvp.MVPActivity;
-import com.easyway.review.module.patter.mvvm.MVVMActivity;
+import com.easyway.review.module.patter.mvvmdemo.MVVMDemoActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.easyway.review.module.service.AidlActivity;
 import com.easyway.review.module.view.CustomerViewActivity;
@@ -83,7 +83,7 @@ public class MainActivity extends BaseActivity {
                         Uintent.intentDIY(mActivity, MVPActivity.class);
                         break;
                     case "MVVM设计模式":
-                        Uintent.intentDIY(mActivity, MVVMActivity.class);
+                        Uintent.intentDIY(mActivity, MVVMDemoActivity.class);
                         break;
                 }
             }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--如果你使用了mvvm设计模式， dataBinding  根布局必须使用layout 加<data></data>标签 -->
+    <!--以上操作都可以在原先的根布局上使用快捷键 按住Alt+enter convert to data binding layout实现-->
+    <data>
+
+
+        <variable
+            name="bean"
+            type="com.easyway.review.module.patter.mvc.model.Account" />
+        <variable
+            name="activity"
+            type="com.easyway.review.module.patter.mvvmdemo.MVVMDemoActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp"
+        tools:context=".module.patter.mvvmdemo.MVVMDemoActivity">
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bean.name+'|'+bean.level}"
+            tools:text="账号|等级" />
+
+        <Button
+            android:id="@+id/btn_addLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:onClick="@{activity.commit}"
+            android:text="增加等级" />
+    </LinearLayout>
+</layout>
