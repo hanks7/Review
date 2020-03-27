@@ -11,7 +11,7 @@ import java.util.Random;
  * @class describe
  */
 public class MVPModel {
-    public void getAccountdata(String strAccount, MCallBack back) {
+    public void dealData(String strAccount, MCallBack back) {
         Random random = new Random();
         boolean isSuccess = random.nextBoolean();
 

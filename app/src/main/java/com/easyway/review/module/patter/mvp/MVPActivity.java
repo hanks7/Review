@@ -41,7 +41,7 @@ public class MVPActivity extends AppCompatActivity implements IView {
     }
 
     public void btnClick(View view) {
-        mPresenter.getData();
+        mPresenter.setViewData();
     }
 
     @Override

@@ -17,8 +17,8 @@ public class MVPPresenter {
         mModel=new MVPModel();
     }
 
-    public void getData() {
-        mModel.getAccountdata(mView.getUserInput(), new MCallBack() {
+    public void setViewData() {
+        mModel.dealData(mView.getUserInput(), new MCallBack() {
             @Override
             public void onSuccess(Account bean) {
                 mView.showSuccessPage(bean);
