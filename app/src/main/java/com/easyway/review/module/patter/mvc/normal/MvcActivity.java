@@ -13,12 +13,12 @@ import com.easyway.review.module.patter.mvc.model.Account;
 import com.easyway.review.module.patter.mvc.model.MvcModel;
 
 import butterknife.BindView;
+
 /**
- *
- * @Package:        com.easyway.review.module.patter.mvc.normal.MvcActivity
- * @Author:         侯建军
- * @CreateDate:     2020/1/6 13:20
- * @Description:    mvc :   缺点：control层与view难以完全解耦（activity既是控制器，又要承担部分视图工作）
+ * @Package: com.easyway.review.module.patter.mvc.normal.MvcActivity
+ * @Author: 侯建军
+ * @CreateDate: 2020/1/6 13:20
+ * @Description: mvc :   缺点：control层与view难以完全解耦（activity既是控制器，又要承担部分视图工作）
  */
 public class MvcActivity extends AppCompatActivity {
     @BindView(R.id.edt_input)
@@ -34,7 +34,7 @@ public class MvcActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal);
-          model=new MvcModel();
+        model = new MvcModel();
     }
 
     public void btnClick(View view) {

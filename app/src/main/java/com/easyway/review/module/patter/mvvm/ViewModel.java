@@ -24,7 +24,7 @@ public class ViewModel extends BaseObservable {
 
     private String userInput;
 
-    @Bindable
+    @Bindable//是加在get方法中
     public String getUserInput() {
         return userInput;
     }
@@ -36,7 +36,7 @@ public class ViewModel extends BaseObservable {
 
     private String result;
 
-    @Bindable
+    @Bindable//是加在get方法中
     public String getResult() {
         return result;
     }
