@@ -38,17 +38,26 @@ public class BindService extends Service {
 
     }
 
+    /**
+     * 这是一个BindService的测试方法
+     */
+    private void test() {
+        Ulog.i("ServiceTest", "  ----->  getString");
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
-
+        Ulog.i("ServiceTest", "  ----->  onBind");
         return new Mybind();
     }
 
 
     class Mybind extends Binder {
         public void getString() {
-            Ulog.i("ServiceTest", "  ----->  getString");
+            test();
         }
+
+
     }
 
 }

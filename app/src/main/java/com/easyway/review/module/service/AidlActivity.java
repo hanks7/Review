@@ -6,6 +6,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,23 +31,18 @@ public class AidlActivity extends BaseActivity {
     private Button btnStopService;
     private Button btnBindService;
     private Button btnUnbindService;
+    private Button bind_service_click_listener;
     /**
-     *   绑定服务
-     *   bindService(bindService, connection, BIND_AUTO_CREATE);
-     *   解绑服务
-     *   unbindService(connection);
+     * 绑定服务
+     * bindService(bindService, connection, BIND_AUTO_CREATE);
+     * 解绑服务
+     * unbindService(connection);
      */
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             myAIDLService = IMyAidlInterface.Stub.asInterface(service);
-            try {
-                String str = myAIDLService.getString();
-                UToast.showText(str);
 
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
         }
 
         @Override
@@ -56,6 +52,10 @@ public class AidlActivity extends BaseActivity {
     };
 
     private IMyAidlInterface myAIDLService;
+    /**
+     * 未防止未注册service 而出现Service not registered的错误.
+     */
+    private boolean isBind;
 
     @Override
     protected void setOnTranslucent() {
@@ -66,10 +66,11 @@ public class AidlActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
 
-        btnStartService = (Button) findViewById(R.id.start_service);
-        btnStopService = (Button) findViewById(R.id.stop_service);
-        btnBindService = (Button) findViewById(R.id.bind_service);
-        btnUnbindService = (Button) findViewById(R.id.unbind_service);
+        btnStartService = findViewById(R.id.start_service);
+        btnStopService = findViewById(R.id.stop_service);
+        btnBindService = findViewById(R.id.bind_service);
+        btnUnbindService = findViewById(R.id.unbind_service);
+        bind_service_click_listener = findViewById(R.id.bind_service_click_listener);
 
 
         /**
@@ -78,8 +79,8 @@ public class AidlActivity extends BaseActivity {
         btnStartService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startService = new Intent(AidlActivity.this, AidlService.class);
-                startService(startService);
+                Intent intent = getIntentService();
+                startService(intent);
 
             }
         });
@@ -91,8 +92,7 @@ public class AidlActivity extends BaseActivity {
         btnStopService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent stopService = new Intent(AidlActivity.this, AidlService.class);
-                stopService(stopService);
+                stopService(getIntentService());
             }
         });
 
@@ -102,19 +102,45 @@ public class AidlActivity extends BaseActivity {
         btnBindService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bindService = new Intent(AidlActivity.this, AidlService.class);
-                bindService(bindService, connection, BIND_AUTO_CREATE);
+                isBind = bindService(getIntentService(), connection, BIND_AUTO_CREATE);
             }
         });
+        /**
+         * 调用service中的方法
+         */
+        bind_service_click_listener.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (myAIDLService != null) {
+                    try {
+                        String str = myAIDLService.getString();
+                        UToast.showText(str);
 
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        });
         /**
          * 解绑服务
          */
         btnUnbindService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                unbindService(connection);
+                if (isBind) {
+                    unbindService(connection);
+                    isBind = false;
+                }
             }
         });
+    }
+
+    @NonNull
+    private Intent getIntentService() {
+        Intent intent = new Intent("aaa-service");
+        intent.setPackage("com.easyway.review");
+        return intent;
     }
 }

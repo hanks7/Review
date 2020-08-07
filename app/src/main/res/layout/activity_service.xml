@@ -26,6 +26,12 @@
         android:text="绑定服务" />
 
     <Button
+        android:id="@+id/bind_service_click_listener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用bindService中的方法" />
+
+    <Button
         android:id="@+id/unbind_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

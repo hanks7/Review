@@ -24,6 +24,8 @@ import com.easyway.review.module.patter.mvp.MVPActivity;
 import com.easyway.review.module.patter.mvvm.MVVMActivity;
 import com.easyway.review.module.recycleview.RecycleViewActivity;
 import com.easyway.review.module.service.AidlActivity;
+import com.easyway.review.module.service.BindService2Activity;
+import com.easyway.review.module.service.BindServiceActivity;
 import com.easyway.review.module.view.CustomerViewActivity;
 import com.hanks.frame.utils.UToast;
 import com.hanks.frame.utils.Uintent;
@@ -50,6 +52,8 @@ public class MainActivity extends BaseActivity {
         mList.add("MVC设计模式");
         mList.add("MVP设计模式");
         mList.add("MVVM设计模式");
+        mList.add("startService");
+        mList.add("bindService");
 
         initToolbar();
 
@@ -85,6 +89,13 @@ public class MainActivity extends BaseActivity {
                     case "MVVM设计模式":
                         Uintent.intentDIY(mActivity, MVVMActivity.class);
                         break;
+                    case "startService":
+                        Uintent.intentDIY(mActivity, BindServiceActivity.class);
+                        break;
+                    case "bindService":
+                        Uintent.intentDIY(mActivity, BindService2Activity.class);
+                        break;
+
                 }
             }
 

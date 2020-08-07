@@ -33,10 +33,15 @@
         <service
             android:name=".module.service.AidlService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="aaa-service" />
+            </intent-filter>
+        </service>
 
         <activity android:name=".module.service.AidlActivity" />
         <activity android:name=".module.service.BindServiceActivity" />
+        <activity android:name=".module.service.BindService2Activity" />
 
         <service
             android:name=".module.service.BindService"
